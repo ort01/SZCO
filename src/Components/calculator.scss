@@ -9,7 +9,7 @@
     text-align: center;
     background-color: rgba(255, 255, 255, 0.4);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    width: 30%;
+    width: calc(300px + 20%);
     border-radius: 8px;
 }
 
@@ -24,7 +24,33 @@ input[type=number] {
     text-align: center;
 }
 
-.label-and-input {
+.form {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    label{
+        width: 50%;
+        text-align: start;
+    }
+    input{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form {
+        label{
+            width: 100%;
+        }
+        input{
+            width: 100%;
+        }
+    }
+
+    // .calculatorBody{
+    //     width: 80%;
+    // }
+
 }

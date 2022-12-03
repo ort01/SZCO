@@ -1,49 +1,42 @@
-import './calculator.css'
+import './calculator.scss'
 import Button from '@mui/material/Button';
 
 export function Calculator() {
     return (
         <div className="calculatorBody">
-            <h3>Enter informations</h3>
-            <div className='label-and-input'>
-                <label>Hodinova mzda</label>
+            <h3>Vložte informácie</h3>
+            <div className='form'>
+                <label>Hodinová mzda</label>
                 <input
                     name="Money"
                     placeholder="eur/hod"
                     type='number'
                 />
-            </div>
-            <div className='label-and-input'>
-                <label>Pocet odpracovanych hodin za mesiac</label>
+                <label>Počet odpracovaných hodín za mesiac</label>
                 <input
                     name="Hours"
                     placeholder="Počet Hodín"
                     type='number'
                 />
-            </div>
-            <div className='label-and-input'>
-                <label>Odvody do SP</label>
+                <label>Odvody do Sociálnej poisťovne</label>
                 <input
                     name="Social"
-                    placeholder="Sociálna poisťovňa"
+                    placeholder="Minimálna výška 187,78€"
                     type='number'
                 />
-            </div>
-            <div className='label-and-input'>
-                <label>Odvody do ZP</label>
+                <label>Odvody do Zdravotnej poisťovne</label>
                 <input
                     name="Health"
-                    placeholder="Zdravotná poisťovňa"
+                    placeholder="Minimálna výška 84,77€"
                     type='number'
                 />
+
             </div>
-            <div className='label-and-input'>
-                <input
-                    name="Checkbox"
-                    type='checkbox'
-                />
-                <label>suhlasim</label>
-            </div>
+            <input
+                name="Checkbox"
+                type='checkbox'
+            />
+            <label>Beriem na vedomie, že prevádzkovateľ tejto webovej stránky na informácie uvedené na tejto stránke neposkytuje žiadne záruky a nenesie žiadnu zodpovednosť za škody akéhokoľvek druhu súvisiace s obsahom na tejto webovej stránke!</label>
             <Button variant="contained">Potvrdit</Button>
 
         </div>
