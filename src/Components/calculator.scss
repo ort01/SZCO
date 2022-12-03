@@ -18,10 +18,16 @@ input[type=number] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    color: rgb(41, 146, 202);
+    border-radius: 5px;
+    background-color: aliceblue;
     border: none;
-    border-radius: 4px;
-    background-color: #ffffffe1;
     text-align: center;
+}
+
+input[type=number]:focus {
+    color: rgb(41, 146, 202);
+    outline: none;
 }
 
 .form {
@@ -30,25 +36,28 @@ input[type=number] {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    label{
+
+    label {
         width: 50%;
         text-align: start;
     }
-    input{
+
+    input {
         width: 50%;
     }
 }
 
-#warranty-limitation{
+#warranty-limitation {
     font-size: 10pt;
 }
 
 @media screen and (max-width: 600px) {
     .form {
-        label{
+        label {
             width: 100%;
         }
-        input{
+
+        input {
             width: 100%;
         }
     }
@@ -56,5 +65,24 @@ input[type=number] {
     // .calculatorBody{
     //     width: 80%;
     // }
+
+}
+
+.confirmation {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    align-items: center;
+
+    label {
+        width: 80%;
+        text-align: left;
+    }
+
+    input {
+        width: 10%;
+    }
 
 }
