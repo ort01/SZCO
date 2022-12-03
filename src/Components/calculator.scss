@@ -20,7 +20,7 @@ input[type=number] {
     box-sizing: border-box;
     color: rgb(41, 146, 202);
     border-radius: 5px;
-    background-color: aliceblue;
+    background-color: rgb(243, 251, 255);
     border: none;
     text-align: center;
 }
@@ -37,13 +37,23 @@ input[type=number]:focus {
     justify-content: space-between;
     align-items: center;
 
-    label {
+    .left-col {
         width: 50%;
         text-align: start;
     }
 
-    input {
-        width: 50%;
+    .right-col {
+        width: 40%;
+    }
+
+    .tooltip {
+        width: 10%;
+        
+
+        .help-icon{
+            height: 15px;
+            width: 15px;
+        }
     }
 }
 
@@ -51,14 +61,38 @@ input[type=number]:focus {
     font-size: 10pt;
 }
 
+.confirmation {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    label {
+        width: 80%;
+        text-align: justify;
+    }
+
+    input {
+        width: 10%;
+    }
+
+}
+
 @media screen and (max-width: 600px) {
     .form {
-        label {
+        .left-col {
             width: 100%;
         }
 
-        input {
-            width: 100%;
+        .right-col {
+            width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .tooltip {
+            width: 10%;
         }
     }
 
@@ -68,21 +102,3 @@ input[type=number]:focus {
 
 }
 
-.confirmation {
-    margin: 30px auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    // justify-content: space-between;
-    align-items: center;
-
-    label {
-        width: 80%;
-        text-align: left;
-    }
-
-    input {
-        width: 10%;
-    }
-
-}
