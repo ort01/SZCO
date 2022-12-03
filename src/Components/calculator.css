@@ -1,0 +1,30 @@
+.calculatorBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 40px;
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 30%;
+    border-radius: 8px;
+}
+
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffffffe1;
+    text-align: center;
+}
+
+.label-and-input {
+    display: flex;
+    flex-direction: row;
+}
