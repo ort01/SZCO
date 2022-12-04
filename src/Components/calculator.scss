@@ -34,12 +34,14 @@ input[type=number]:focus {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+
 
     .left-col {
         width: 50%;
         text-align: start;
+        margin-right: 3%;
     }
 
     .right-col {
@@ -47,14 +49,11 @@ input[type=number]:focus {
     }
 
     .tooltip {
-        width: 10%;
-        
-
-        .help-icon{
-            height: 15px;
-            width: 15px;
-        }
+        width: 0%;
+        margin-left: 1%;
     }
+
+
 }
 
 #warranty-limitation {
@@ -77,8 +76,8 @@ input[type=number]:focus {
     input {
         width: 10%;
     }
-
 }
+
 
 @media screen and (max-width: 600px) {
     .form {
@@ -101,4 +100,3 @@ input[type=number]:focus {
     // }
 
 }
-

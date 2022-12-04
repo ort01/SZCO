@@ -12,8 +12,8 @@ export function Calculator() {
     const getTooltip = (tooltipText: string): ReactJSXElement => {
         return (
             <Tooltip className='tooltip' title={tooltipText}>
-                <IconButton sx={{ color: grey[700] }}>
-                    <HelpIcon />
+                <IconButton sx={{ color: grey[500] }}>
+                    <HelpIcon sx={{ fontSize: 15 }} />
                 </IconButton>
             </Tooltip>
         )
@@ -37,21 +37,21 @@ export function Calculator() {
                     type='number'
                 />
                 {getTooltip("Ponúkaná hodinová mzda bez akýchkoľvek úprav.")}
-                <label className='left-col'>Počet odpracovaných hodín za mesiac:</label>
+                <label className='left-col'>Počet odpracovaných hodín za mesiac</label>
                 <input className='right-col'
                     name="Hours"
                     placeholder="napr. 160"
                     type='number'
                 />
                 {getTooltip("Počet hodín reálne odpracovaných za jeden mesiac.")}
-                <label className='left-col'>Odvody do Sociálnej poisťovne:</label>
+                <label className='left-col'>Odvody do Sociálnej poisťovne</label>
                 <input className='right-col'
                     name="Social"
                     placeholder="Min. 187,78€ za Mesiac"
                     type='number'
                 />
                 {getTooltip("Výška odvodov do sociálnej poisťovne. V prvý rok podnikania sa odvody do sociálnej poisťovne neplatia. Výška odvodov určuje aj mieru sociálnej starostlivosti v prípade nezamestnanosti alebo pracovnej neschonosti.")}
-                <label className='left-col'>Odvody do Zdravotnej poisťovne:</label>
+                <label className='left-col'>Odvody do Zdravotnej poisťovne</label>
                 <input className='right-col'
                     name="Health"
                     placeholder="Min. 84,77€ za Mesiac"
