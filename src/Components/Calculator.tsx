@@ -1,33 +1,15 @@
 import './calculator.scss'
-import { useState } from 'react';
+import { ChangeEventHandler, useState } from 'react';
 import Button from '@mui/material/Button';
 import { Tooltip } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import HelpIcon from '@mui/icons-material/Help';
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 import { grey } from '@mui/material/colors';
+import { PropaneSharp } from '@mui/icons-material';
+import { FormContent } from './FormState';
 
-export function Calculator() {
-
-
-    // const [form, setForm] = useState({
-    //     Mzda: "",
-    //     Hodiny: "",
-    //     Socialka: "",
-    //     Zdravotka: ""
-    // });
-
-    // function handleChange(event: string) {
-    //     const { Mzda, Hodiny, Socialka, Zdravotka } = event.target;
-
-    //     setForm((prevNote) => {
-    //         return {
-    //             ...prevNote,
-    //             [name]: value
-    //         };
-    //     });
-    // }
-
+export function Calculator({form, handleFormChange}: {form: FormContent, handleFormChange: (event: React.ChangeEvent<HTMLInputElement>) => void}) {
 
     const getTooltip = (tooltipText: string): ReactJSXElement => {
         return (
@@ -51,32 +33,38 @@ export function Calculator() {
             <div className='form'>
                 <label className='left-col'>Hodinová mzda</label>
                 <input className='right-col'
-                    name="Mzda"
+                    name="mzda"
                     placeholder="€/hod."
                     type='number'
-                // onChange={handleChange}
-                // value={parseFloat(form.Mzda)}
+                    onChange={handleFormChange}
+                    value={form.hourlyRate}
                 />
                 {getTooltip("Ponúkaná hodinová mzda bez akýchkoľvek úprav.")}
                 <label className='left-col'>Počet odpracovaných hodín za mesiac</label>
                 <input className='right-col'
-                    name="Hodiny"
+                    name="hodiny"
                     placeholder="napr. 160"
                     type='number'
+                    onChange={handleFormChange}
+                    value={form.hours}
                 />
                 {getTooltip("Počet hodín reálne odpracovaných za jeden mesiac.")}
                 <label className='left-col'>Odvody do Sociálnej poisťovne</label>
                 <input className='right-col'
-                    name="Socialka"
+                    name="socialka"
                     placeholder="Min. 187,78€ za Mesiac"
                     type='number'
+                    onChange={handleFormChange}
+                    value={form.socialInsurance}
                 />
                 {getTooltip("Výška odvodov do sociálnej poisťovne. V prvý rok podnikania sa odvody do sociálnej poisťovne neplatia. Výška odvodov určuje aj mieru sociálnej starostlivosti v prípade nezamestnanosti alebo pracovnej neschonosti.")}
                 <label className='left-col'>Odvody do Zdravotnej poisťovne</label>
                 <input className='right-col'
-                    name="Zdravotka"
+                    name="zdravotka"
                     placeholder="Min. 84,77€ za Mesiac"
                     type='number'
+                    onChange={handleFormChange}
+                    value={form.healthInsurance}
                 />
                 {getTooltip("Výška odvodov do zdravotnej poisťovne.")}
 
@@ -86,6 +74,7 @@ export function Calculator() {
                     name="Checkbox"
                     type='checkbox'
                     onClick={handleInput}
+                    onChange={handleFormChange}
                 />
                 <label id="warranty-limitation">Beriem na vedomie, že prevádzkovateľ tejto webovej stránky na informácie uvedené na tejto stránke neposkytuje žiadne záruky a nenesie žiadnu zodpovednosť za škody akéhokoľvek druhu súvisiace s obsahom na tejto webovej stránke!</label>
             </div>
