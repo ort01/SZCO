@@ -12,25 +12,25 @@ function App() {
     hours: undefined,
     socialInsurance: undefined,
     healthInsurance: undefined
-});
+  });
 
 
-function handleFormChange(event: React.ChangeEvent<HTMLInputElement>) {
+  function handleFormChange(event: React.ChangeEvent<HTMLInputElement>) {
 
     setForm({
-        hourlyRate: event.target.name == 'mzda' ?  event.target.value : form.hourlyRate,
-        hours: event.target.name == 'hodiny' ?  event.target.value : form.hours,
-        socialInsurance: event.target.name == 'socialka' ?  event.target.value : form.socialInsurance,
-        healthInsurance: event.target.name == 'zdravotka' ?  event.target.value : form.healthInsurance,
+      hourlyRate: event.target.name == 'mzda' ? Number(event.target.value) : form.hourlyRate,
+      hours: event.target.name == 'hodiny' ? Number(event.target.value) : form.hours,
+      socialInsurance: event.target.name == 'socialka' ? Number(event.target.value) : form.socialInsurance,
+      healthInsurance: event.target.name == 'zdravotka' ? Number(event.target.value) : form.healthInsurance,
     });
-    
-}
+
+  }
 
   return (
     <div>
       <Header />
       <div className='calculator'>
-        <Calculator form = {form} handleFormChange = {handleFormChange} />
+        <Calculator form={form} handleFormChange={handleFormChange} />
       </div>
       <Results />
     </div>
