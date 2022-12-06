@@ -9,7 +9,18 @@ import { grey } from '@mui/material/colors';
 import { PropaneSharp } from '@mui/icons-material';
 import { FormContent } from './FormState';
 
-export function Calculator({form, handleFormChange}: {form: FormContent, handleFormChange: (event: React.ChangeEvent<HTMLInputElement>) => void}) {
+export function Calculator({ form, handleFormChange }: { form: FormContent, handleFormChange: (event: React.ChangeEvent<HTMLInputElement>) => void }) {
+
+    const getResults = () => {
+        const recievedMoney = Number(form.hourlyRate) * Number(form.hours)
+        const lostMoney = Number(form.socialInsurance) + Number(form.healthInsurance)
+        const lampsumPayment = recievedMoney - (40 %)
+
+        return {
+
+        }
+
+    }
 
     const getTooltip = (tooltipText: string): ReactJSXElement => {
         return (
@@ -78,7 +89,7 @@ export function Calculator({form, handleFormChange}: {form: FormContent, handleF
                 />
                 <label id="warranty-limitation">Beriem na vedomie, že prevádzkovateľ tejto webovej stránky na informácie uvedené na tejto stránke neposkytuje žiadne záruky a nenesie žiadnu zodpovednosť za škody akéhokoľvek druhu súvisiace s obsahom na tejto webovej stránke!</label>
             </div>
-            {inputState ? <Button variant="contained">Potvrdiť</Button> : <Button variant="contained" disabled>Potvrdiť</Button>}
+            {inputState ? <Button variant="contained" onClick={getResults}>Potvrdiť</Button> : <Button variant="contained" disabled>Potvrdiť</Button>}
         </div >
     )
 }
