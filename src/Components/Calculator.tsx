@@ -14,8 +14,7 @@ export function Calculator({ form, handleFormChange }: { form: FormContent, hand
     const getResults = () => {
         const recievedMoney = Number(form.hourlyRate) * Number(form.hours)
         const lostMoney = Number(form.socialInsurance) + Number(form.healthInsurance)
-        const lampsumPayment = recievedMoney - (40 %)
-
+        const lampsumPayment = recievedMoney - (recievedMoney * 0.6)
         return {
 
         }
