@@ -1,6 +1,7 @@
 import './results.scss'
+import { DataContent } from './Interfaces';
 
-export function Results() {
+export function Results({ data }: { data: DataContent }) {
     return (
         <div className="results" >
             <h1>Výsledky</h1>
@@ -15,7 +16,7 @@ export function Results() {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>4534</td>
+                        <td>{data.recievedMoney}</td>
                         <td>235</td>
                         <td>3446</td>
                         <td>3453</td>

@@ -7,7 +7,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 import { grey } from '@mui/material/colors';
 import { PropaneSharp } from '@mui/icons-material';
-import { FormContent } from './FormState';
+import { FormContent } from './Interfaces';
 
 
 export function Calculator({ form, handleFormChange, getResults }: { form: FormContent, handleFormChange: (event: React.ChangeEvent<HTMLInputElement>) => void }, { getResults: number }) {

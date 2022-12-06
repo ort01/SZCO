@@ -3,7 +3,7 @@ import { Header } from "./Header"
 import { Calculator } from './Calculator'
 import { Results } from './Results'
 import { useState } from 'react';
-import { FormContent } from './FormState';
+import { DataContent, FormContent } from './Interfaces';
 
 function App() {
 
@@ -26,6 +26,9 @@ function App() {
 
   }
 
+
+  const [data, setData] = useState<DataContent>({})
+
   const getResults = () => {
     if (form.healthInsurance == undefined || form.hourlyRate == undefined || form.hours == undefined || form.socialInsurance == undefined) {
       return "Je potrebne zadat parametre"
@@ -35,14 +38,13 @@ function App() {
       const lumpSumPayment = recievedMoney * 0.6
       const nonTaxableIncome = 410.24
       const iCameForTheMoney = recievedMoney - (insurancePaid + lumpSumPayment + nonTaxableIncome)
-
-      return {
+      setData({
         recievedMoney: recievedMoney,
         insurancePaid: insurancePaid,
         lumpSumPayment: lumpSumPayment,
         nonTaxableIncome: nonTaxableIncome,
         iCameForTheMoney: iCameForTheMoney
-      }
+      })
     }
   }
 
@@ -52,7 +54,7 @@ function App() {
       <div className='calculator'>
         <Calculator form={form} handleFormChange={handleFormChange} getResults={getResults} />
       </div>
-      <Results />
+      <Results data={data} />
     </div>
   )
 }
