@@ -26,11 +26,31 @@ function App() {
 
   }
 
+  const getResults = () => {
+    if (form.healthInsurance == undefined || form.hourlyRate == undefined || form.hours == undefined || form.socialInsurance == undefined) {
+      return "Je potrebne zadat parametre"
+    } else {
+      const recievedMoney = form.hourlyRate * form.hours
+      const insurancePaid = form.socialInsurance + form.healthInsurance
+      const lumpSumPayment = recievedMoney * 0.6
+      const nonTaxableIncome = 410.24
+      const iCameForTheMoney = recievedMoney - (insurancePaid + lumpSumPayment + nonTaxableIncome)
+
+      return {
+        recievedMoney: recievedMoney,
+        insurancePaid: insurancePaid,
+        lumpSumPayment: lumpSumPayment,
+        nonTaxableIncome: nonTaxableIncome,
+        iCameForTheMoney: iCameForTheMoney
+      }
+    }
+  }
+
   return (
     <div>
       <Header />
       <div className='calculator'>
-        <Calculator form={form} handleFormChange={handleFormChange} />
+        <Calculator form={form} handleFormChange={handleFormChange} getResults={getResults} />
       </div>
       <Results />
     </div>

@@ -9,17 +9,8 @@ import { grey } from '@mui/material/colors';
 import { PropaneSharp } from '@mui/icons-material';
 import { FormContent } from './FormState';
 
-export function Calculator({ form, handleFormChange }: { form: FormContent, handleFormChange: (event: React.ChangeEvent<HTMLInputElement>) => void }) {
 
-    const getResults = () => {
-        const recievedMoney = Number(form.hourlyRate) * Number(form.hours)
-        const lostMoney = Number(form.socialInsurance) + Number(form.healthInsurance)
-        const lampsumPayment = recievedMoney - (recievedMoney * 0.6)
-        return {
-
-        }
-
-    }
+export function Calculator({ form, handleFormChange, getResults }: { form: FormContent, handleFormChange: (event: React.ChangeEvent<HTMLInputElement>) => void }, { getResults: number }) {
 
     const getTooltip = (tooltipText: string): ReactJSXElement => {
         return (
